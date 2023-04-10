@@ -1,4 +1,4 @@
-# Nextra Docs Template
+#Reward System Documentation
 
 This is a template for creating documentation with [Nextra](https://nextra.site).
 
