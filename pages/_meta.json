@@ -1,7 +1,10 @@
 {
   "index": "Introduction",
   "another": "Another Page",
+  "nftdata": "Nft Data",
+  "minting":"Minting",
   "advanced": "Advanced (A Folder)",
+  
   "about": {
     "title": "About",
     "type": "page"
