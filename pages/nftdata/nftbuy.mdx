@@ -1,8 +1,75 @@
-# NFT BUY 
+---
+title: Buying NFTs API Documentation
+---
 
-This page will tell you how to buy nft"s
-```js filename="buy.js" {3} copy
-let a = 1;
+# Buying NFTs API Documentation
 
-console.log(a);
+## Overview
+
+PerkVenue provides an API endpoint for buying NFTs. The endpoint accepts a POST request with the necessary parameters for the purchase. The response will contain information about the purchased NFT and the updated user balance.
+
+## Endpoint
+
+The API endpoint for buying NFTs is:
+
+```json
+
+POST /nft/buy
+
 ```
+
+
+## Parameters
+
+The following parameters are required for a successful purchase:
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `nftId` | String | The ID of the NFT being purchased |
+| `userId` | String | The ID of the user making the purchase |
+| `price` | Number | The price of the NFT |
+
+## Example Request
+
+```json
+POST /nft/buy
+Content-Type: application/json
+
+{
+"nftId": "123456",
+"userId": "7890",
+"price": 5.99
+}
+```
+
+
+## Example Response
+
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+"success": true,
+"message": "NFT purchased successfully",
+"nft": {
+"id": "123456",
+"name": "My NFT",
+"owner": "7890"
+},
+"userBalance": 15.01
+}
+```
+
+
+## Errors
+
+| HTTP Status Code | Error Code | Description                  |
+| ---------------- | ----------| -----------------------------|
+| 400              | bad_request | The request is invalid.     |
+| 404              | not_found  | The NFT with the given ID was not found. |
+| 422              | unprocessable_entity | The NFT is not for sale or the buyer's balance is insufficient. |
+
+
+
+
