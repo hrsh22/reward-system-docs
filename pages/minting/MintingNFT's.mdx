@@ -1,3 +1,94 @@
 # NFT Minting
 
-This page will tell you how to mint your nft's.
+The NFT Minting API allows you to create and mint new non-fungible tokens (NFTs) on the PerkVenue platform using the push API method.
+
+## Push API
+Our push API is a secure and easy-to-use method for minting NFTs. You can use our API to create NFTs for your own application, or for any other use case that requires unique digital assets.
+
+## Authentication
+All requests to our push API require authentication. You will need to include your API key in the header of each request. You can find your API key in the "API Keys" section of your PerkVenue dashboard.
+
+## Endpoint
+The endpoint for the NFT Minting API is:
+
+```json
+POST https://api.perkvenue.com/nft/mint
+
+```
+
+
+## Request Parameters
+
+The following request parameters are required to mint a new NFT:
+
+- `name` - The name of the NFT
+- `description` - A description of the NFT
+- `image_url` - The URL of the image to be associated with the NFT
+- `metadata` - Additional metadata to be associated with the NFT
+
+## Request Headers
+
+The following request header is required to use the NFT Minting API:
+
+- `Authorization` - Your PerkVenue API key
+
+## Example Request
+
+```json
+POST /api/nft/mint HTTP/1.1
+Host: api.perkvenue.com
+Content-Type: application/json
+Authorization: YOUR_API_KEY_HERE
+
+{
+"name": "My Awesome NFT",
+"description": "This is an awesome NFT",
+"image_url": "https://example.com/my-nft.png",
+"metadata": {
+"artist": "John Doe",
+"year": "2022",
+"category": "Digital Art"
+}
+}
+
+```
+
+
+## Response
+
+The API will respond with a JSON object containing the following information:
+
+- `id` - The unique ID of the newly minted NFT
+- `name` - The name of the NFT
+- `description` - The description of the NFT
+- `image_url` - The URL of the image associated with the NFT
+- `metadata` - The metadata associated with the NFT
+
+## Example Response
+
+```json
+{
+  "id": "0x0000000000000000000000000000000000000000000000000000000000000001",
+  "name": "My Awesome NFT",
+  "description": "This is an awesome NFT",
+  "image_url": "https://example.com/my-nft.png",
+  "metadata": {
+    "artist": "John Doe",
+    "year": "2022",
+    "category": "Digital Art"
+  }
+}
+```
+
+## Error Responses
+In case of an error, the API will respond with a JSON object containing an error message:
+
+```json
+{
+  "error": "Unauthorized"
+}
+
+```
+
+## Conclusion
+The PerkVenue NFT Minting API provides an easy and efficient way to mint new NFTs on the blockchain. With the API, you can create unique and valuable digital assets for your customers and users.
