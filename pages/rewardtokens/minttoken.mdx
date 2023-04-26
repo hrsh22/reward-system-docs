@@ -1,0 +1,27 @@
+# Minting Token 
+
+This API endpoint is used to mint tokens for a specific account address. This can be used to add more tokens to an existing wallet or create a new wallet with tokens.
+
+## Endpoint
+
+`POST /tokens/mint`
+
+## Request Format
+
+The request format should be in JSON format and include the following parameters:
+
+| Parameter        | Type   | Description                                             |
+| ---------------- | ------ | ------------------------------------------------------- |
+| tokenAddress     | string | The contract address of the token being minted.         |
+| accountAddress   | string | The account address that will receive the minted tokens.|
+| amount           | string | The amount of tokens to be minted.                      |
+
+#### Example Request
+
+```json copy
+{
+    "tokenAddress": "0x2b7a81EF19a12D214F9563E6c6388a2ef892e09F",
+    "accountAddress": "0xB78721b29c028B16ab25f4a2adE1d25fbf8B2d74",
+    "amount": "1000"
+}
+```

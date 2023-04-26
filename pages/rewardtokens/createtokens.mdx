@@ -1,0 +1,27 @@
+# Create Token 
+
+This API endpoint allows you to create a new token.
+
+## Endpoint
+
+`POST /tokens/create`
+
+## Request Format
+
+The request format should be in JSON format and include the following parameters:
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| name | string | yes | The name of the token |
+| symbol | string | yes | The symbol of the token |
+| creatorAddress | string | yes | The Ethereum address of the token creator |
+
+#### Example Request
+
+```json copy
+{
+    "name": "Test1",
+    "symbol": "T1",
+    "creatorAddress": "0xB78721b29c028B16ab25f4a2adE1d25fbf8B2d74"
+}
+```
