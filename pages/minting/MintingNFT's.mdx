@@ -2,7 +2,7 @@
 title: Minting NFTs 
 ---
 
-# NFT Minting
+# NFT Minting 🛠️
 
 The NFT Minting API allows you to create and mint new non-fungible tokens (NFTs) on the PerkVenue platform using the push API method.
 
@@ -28,15 +28,15 @@ The following request parameters are required to mint a new NFT:
 - `name` - The name of the NFT
 - `description` - A description of the NFT
 - `image_url` - The URL of the image to be associated with the NFT
-- `metadata` - Additional metadata to be associated with the NFT
+- `recepient address` - Address of the recepient
 
-## Request Headers
+### Request Headers
 
 The following request header is required to use the NFT Minting API:
 
 - `Authorization` - Your PerkVenue API key
 
-## Example Request
+### Example Request
 
 ```json
 POST /api/nft/mint HTTP/1.1
@@ -48,11 +48,7 @@ Authorization: YOUR_API_KEY_HERE
 "name": "My Awesome NFT",
 "description": "This is an awesome NFT",
 "image_url": "https://example.com/my-nft.png",
-"metadata": {
-"artist": "John Doe",
-"year": "2022",
-"category": "Digital Art"
-}
+"recepient address": "00000xx"
 }
 
 ```
@@ -63,33 +59,21 @@ Authorization: YOUR_API_KEY_HERE
 The API will respond with a JSON object containing the following information:
 
 - `id` - The unique ID of the newly minted NFT
-- `name` - The name of the NFT
-- `description` - The description of the NFT
-- `image_url` - The URL of the image associated with the NFT
-- `metadata` - The metadata associated with the NFT
 
-## Example Response
+### Example Response
 
 ```json
 {
-  "id": "0x0000000000000000000000000000000000000000000000000000000000000001",
-  "name": "My Awesome NFT",
-  "description": "This is an awesome NFT",
-  "image_url": "https://example.com/my-nft.png",
-  "metadata": {
-    "artist": "John Doe",
-    "year": "2022",
-    "category": "Digital Art"
-  }
+  "id": "21"
 }
 ```
 
-## Error Responses
+### Error Responses
 In case of an error, the API will respond with a JSON object containing an error message:
 
 ```json
 {
-  "error": "Unauthorized"
+  "error": "Error message"
 }
 
 ```

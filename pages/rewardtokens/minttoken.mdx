@@ -1,3 +1,7 @@
+---
+title: Mint Tokens
+---
+
 # Minting Token 
 
 This API endpoint is used to mint tokens for a specific account address. This can be used to add more tokens to an existing wallet or create a new wallet with tokens.
@@ -25,3 +29,38 @@ The request format should be in JSON format and include the following parameters
     "amount": "1000"
 }
 ```
+
+## Response
+If the request is successful, the response will be a 200 OK status code with an empty response body.
+
+If the request is unsuccessful, an appropriate error response will be returned along with the appropriate HTTP status code.
+
+
+The API will respond with a JSON object containing the following information:
+
+- `mintingDetails`: Gives you detail about your Minted token.
+ 
+
+### Example Response
+
+```json
+{
+   
+    "mintingDetails": "1000 tokens successfully minted to account: 0xB78721b29c028B16ab25f4a2adE1d25fbf8B2d74 for token: 0x2b7a81EF19a12D214F9563E6c6388a2ef892e09F"
+
+}
+```
+
+### Error Responses
+In case of an error, the API will respond with a JSON object containing an error message:
+
+```json
+{
+  "error": "Error message"
+}
+
+```
+
+
+## Conclusion
+In conclusion, the minting token API allows for the creation of a new NFT by minting a certain amount of tokens associated with a specific token contract address and account address, and returns the minting details such as the token ID and transaction hash upon successful completion.

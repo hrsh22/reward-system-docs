@@ -1,3 +1,7 @@
+---
+title: Create Token
+---
+
 # Create Token 
 
 This API endpoint allows you to create a new token.
@@ -5,6 +9,15 @@ This API endpoint allows you to create a new token.
 ## Endpoint
 
 `POST /tokens/create`
+
+## Authentication
+All requests to our GET API require authentication. You will need to include your API key in the header of each request. You can find your API key in the "API Keys" section of your PerkVenue dashboard.
+
+## Request Headers
+
+The following request header is required to use the NFT Minting API:
+
+- `Authorization` - Your PerkVenue API key
 
 ## Request Format
 
@@ -25,3 +38,44 @@ The request format should be in JSON format and include the following parameters
     "creatorAddress": "0xB78721b29c028B16ab25f4a2adE1d25fbf8B2d74"
 }
 ```
+
+## Response
+
+The API will respond with a JSON object containing the following information:
+
+- `tokenId`: a unique identifier for the NFT
+- `tokenAddress`: the contract address of the NFT
+- `name`: the name of the NFT
+- `symbol`: the symbol or ticker of the NFT
+- `creatorAddress`: the account address that created the NFT
+- `transactionHash`: the hash of the transaction that created the NFT on the blockchain.
+
+## Example Response
+
+```json
+{
+  "tokenDetails": {
+        "tokenId": 2,
+        "tokenAddress": "0xEA3eA1fc21642625f8a07f31304ED821C8C1449C",
+        "name": "Test1",
+        "symbol": "T1",
+        "creatorAddress": "0xB78721b29c028B16ab25f4a2adE1d25fbf8B2d74",
+        "transactionHash": "0xb612a42a997756205b60dd8f800a0b4cdd324f1ff14b9e83f5b538c4f91a1908"
+    }
+}
+```
+
+## Error Responses
+In case of an error, the API will respond with a JSON object containing an error message:
+
+```json
+{
+  "error": "Error message"
+}
+
+```
+
+## Conclusion
+To conclude, the `createToken` API allows you to create a new ERC-20 token with the specified name, symbol, and initial supply, and returns the token's details including the `tokenId`, `tokenAddress`, `name`, `symbol`, `creatorAddress`, and `transactionHash`. The API can be used by developers and businesses to easily create custom tokens for their specific use cases.
+
+

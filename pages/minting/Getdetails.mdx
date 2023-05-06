@@ -1,0 +1,124 @@
+---
+title: Get Minted NFT details
+---
+
+# Retrive Minted NFT Details
+
+The NFT Retrieval API allows you to retrieve the details of a specific non-fungible token (NFT) that has already been minted on the PerkVenue platform.
+
+## Get API
+The Get API allows you to retrieve details of a specific NFT minted on the PerkVenue platform using the GET API method.
+
+## Authentication
+All requests to our GET API require authentication. You will need to include your API key in the header of each request. You can find your API key in the "API Keys" section of your PerkVenue dashboard.
+
+## Endpoint
+The endpoint for the NFT Minting API is:
+
+```json
+GET https://api.perkvenue.com/nft/details
+
+```
+
+## Request Headers
+
+The following request header is required to use the NFT Minting API:
+
+- `Authorization` - Your PerkVenue API key
+
+
+## Retrive all minted NFTs
+
+
+```json
+GET /api/nft/details HTTP/1.1
+Host: api.perkvenue.com
+Content-Type: application/json
+Authorization: YOUR_API_KEY_HERE
+```
+
+
+## Request Parameters
+
+The following request parameters are required to get details of a specific minted NFT:
+
+- `id` - Unique identifier for the NFT.
+- `owner` - The address of the current owner of the NFT.
+- `tokenAddress` - The address of the smart contract that represents the NFT.
+- `isOnSale` - A boolean value indicating whether the NFT is currently for sale.
+- `price` - The current price of the NFT.
+- `timestamp` - The timestamp when the NFT was created or last modified.
+- `tokenId` - The ID of the NFT on the blockchain.
+- `priceGreaterThan` - A filter parameter to retrieve NFTs with prices greater than a specified value.
+- `priceLessThan` - A filter parameter to retrieve NFTs with prices less than a specified value.
+- `timestampGreaterThan` - A filter parameter to retrieve NFTs created or modified after a specified timestamp.
+- `timestampLessThan` - A filter parameter to retrieve NFTs created or modified before a specified timestamp.
+
+### Example Request
+
+```json
+POST /api/nft/mint HTTP/1.1
+Host: api.perkvenue.com
+Content-Type: application/json
+Authorization: YOUR_API_KEY_HERE
+
+Add following Query at the end of the endpoint to get a specific minted NFT
+- `id` - "?id=644427332959c06104383fb1"
+- `owner` -"?owner=ownerAddress"
+- `tokenAddress` -"?tokenAddress=0x44DE3A8078870068F01F019EFe42ba7525f64E34"
+- `isOnSale` - "?isOnSale=False"
+- `price` - "?price=50"
+- `timestamp` - "?timestamp=1682341614169"
+- `tokenId` - "?tokenId=22"
+- `priceGreaterThan` -"?priceGreaterThan=100"
+- `priceLessThan` - "?priceLessThan=40"
+- `timestampGreaterThan` - "?timestampGreaterThan=1682341614169"
+- `timestampLessThan` - "?timestampLessThan=1682341614169"
+```
+
+
+## Response
+
+The API will respond with a JSON object containing the following information:
+
+- `id`: Unique identifier for the NFT.
+- `owner`: Address of the current owner of the NFT.
+- `tokenAddress`: Address of the contract where the NFT was created.
+- `isOnSale`: Boolean value indicating whether the NFT is currently listed for sale.
+- `price`: Price of the NFT if it is listed for sale.
+- `timestamp`: Timestamp indicating when the NFT was created or last updated.
+- `tokenId`: Unique identifier for the NFT within its contract.
+- `tokenURI`: URL of the metadata associated with the NFT.
+- `txHash`: Transaction hash of the transaction that created or updated the NFT.
+
+### Example Response
+
+```json
+{
+  "id" : "64467eef2959c061049b77fc",
+ "owner": "0xB78721b29c028B16ab25f4a2adE1d25fbf8B2d74",
+ "tokenAdess" :"0x44DE3A8078870068F01F019EFe42ba7525f64E34",
+ "isOnSal" :"False",
+ "price" : "50",
+ "timestamp" : "1682341614169",
+"tokenId ":"22",
+ "tokenURI": "https://nftstorage.link/ipfs/bafyreiapk5znstsgmugr4g5y57qadz6gnfc5cb5gr6hamnyq63f3yfhrky/metadata.json",
+ "txHash" :"0xb893d7b8830975a567393bb0b86c72b5d2ec97a8cc1529305e1f64b647127019",
+}
+
+```
+
+### Error Responses
+In case of an error, the API will respond with a JSON object containing an error message:
+
+```json
+{
+  "error": "Error message"
+}
+
+```
+
+## Conclusion
+The PerkVenue Retrieval API allows users to access information about minted NFTs on the blockchain, including details such as the ID, owner, token address, sale status, price, timestamp, token ID, token URI, and transaction hash. This API can be used to build a variety of applications that involve NFTs, such as marketplaces, galleries, and tracking tools.
+
+

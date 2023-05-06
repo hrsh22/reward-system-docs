@@ -1,15 +1,19 @@
-# BURN TOKEN 
+---
+title: Burn Tokens
+---
 
-## Installation
-```json copy
-npm install axios --save
-```
+# BURN TOKEN 
 
 ## Overview
 
 The BURN TOKEN API is used to burn (or destroy) a certain amount of tokens associated with a specific token contract address and account address.
 Address consist of the token address which is to be burnt
 Account address consist of
+
+## Installation
+```json copy
+npm install axios --save
+```
 
 ## Endpoint
 
@@ -39,3 +43,32 @@ Here's an example request payload:
 If the request is successful, the response will be a 200 OK status code with an empty response body.
 
 If the request is unsuccessful, an appropriate error response will be returned along with the appropriate HTTP status code.
+
+
+The API will respond with a JSON object containing the following information:
+
+- `burningDetails`: Unique identifier for the NFT
+ 
+
+### Example Response
+
+```json
+{
+   
+    "burningDetails": "701 tokens successfully burnt from account: 0x1f344b834E2Be81e02A97b06B31fDE585512222 for token: 0xEA3eA1fc21642625f8a07f31304ED821C123449C"
+
+}
+```
+
+### Error Responses
+In case of an error, the API will respond with a JSON object containing an error message:
+
+```json
+{
+  "error": "Error message"
+}
+
+```
+
+## Conclusion
+In conclusion, the Burn Token API allows users to burn a certain amount of tokens associated with a specific token contract address and account address. It requires the token contract address, account address, and the amount of tokens to be burnt as parameters in the request body. If the request is successful, a 200 OK status code will be returned with an empty response body, while an error message will be returned in case of an unsuccessful request.
