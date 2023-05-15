@@ -1,18 +1,18 @@
 {
   "index": "Introduction",
-  "another": "Getting Started",
-  "nftdata": "Nft Data",
-  "minting":"Minting",
+  "start": "Getting Started",
+  "NFTs":"NFTs",
   "rewardtokens": "Reward Tokens",
   
   "about": {
     "title": "About",
-    "type": "page"
+    "type": "page",
+    "href": "https://rewardsystem.vercel.app/"
   },
   "contact": {
     "title": "Contact ↗",
     "type": "page",
-    "href": "https://twitter.com/shuding_",
+    "href": "https://github.com/hrsh22/reward-system",
     "newWindow": true
   }
 }

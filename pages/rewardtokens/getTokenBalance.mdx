@@ -1,14 +1,14 @@
 ---
-title: Get a specific token details
+title: Get User's Token Balance
 ---
 
-# Token Details 
+# User's Token Balance 
 
-This API endpoint allows you to get details of a specific token.
+This API endpoint allows you to get the token balance of the user.
 
 ## Endpoint
 
-`GET /tokens/getDetails/:tokenAddress`
+`GET /getDetails/:tokenAddress/:userAddress`
 
 ## Authentication
 All requests to our GET API require authentication. You will need to include your API key in the header of each request. You can find your API key in the "API Keys" section of your PerkVenue dashboard.
@@ -24,12 +24,13 @@ The following request header is required to use the NFT Minting API:
 Add following Query at the end of the endpoint to get details of a specific token:
 
 - `tokenAddress` - The contract address of the token
+- `userAddress` -  Address of the user whose Balance you want to find.
 
 #### Example Request
 
 ```json 
 
-/tokens/getDetails/0x2b7a81EF19a12D214F9563E6c6388a2ef892e09F
+    /tokens/getDetails/0x7682B039993c1fB9a13D3B1a87368977DC8565f2/0xB78721b29c028B16ab25f4a2adE1d25fbf8B2d74
 
 ``` 
 
@@ -37,21 +38,13 @@ Add following Query at the end of the endpoint to get details of a specific toke
 
 The API will respond with a JSON object containing the following information:
 
-- `symbol`: The unique symbol of the token.
-- `creator`: The address of the account that originally created the token.
-- `name`: The name of the token.
-- `totalSupply`: The total number of tokens that have been minted for this token contract.
+- `userBalance`: Token Balance of the user.
 
 ### Example Response
 
 ```json
 {
-   "tokenDetails": {
-        "name": "xyz",
-        "symbol": "abc",
-        "creator": "0x1f344b834E2Be81e02A97b06B31fDE5855123948",
-        "totalSupply": "0"
-    }
+    "userBalance": "0"
 }
 ```
 
@@ -62,9 +55,8 @@ In case of an error, the API will respond with a JSON object containing an error
 {
   "error": "Error message"
 }
-
 ```
 
 ## Conclusion
-The `GET /tokens/:tokenAddress` endpoint allows you to retrieve information about a specific token, including its `symbol`, `creator`, `name`, and `totalSupply`.
+The `GET /getDetails/:tokenAddress/:userAddress` endpoint allows you to retrieve user's token balance.
 
