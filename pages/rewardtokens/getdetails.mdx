@@ -1,0 +1,70 @@
+---
+title: Get a specific token details
+---
+
+# Token Details 
+
+This API endpoint allows you to get details of a specific token.
+
+## Endpoint
+
+`POST /tokens/getDetails/:tokenAddress`
+
+## Authentication
+All requests to our GET API require authentication. You will need to include your API key in the header of each request. You can find your API key in the "API Keys" section of your PerkVenue dashboard.
+
+## Request Headers
+
+The following request header is required to use the NFT Minting API:
+
+- `Authorization` - Your PerkVenue API key
+
+## Request Format
+
+Add following Query at the end of the endpoint to get details of a specific token:
+
+- `tokenAddress` - 
+
+#### Example Request
+
+```json 
+
+    - `tokenAddress` - "/tokenAddress=0xEA3eA1fc21642625f8a07f31304ED821C8C1449C"
+
+``` 
+
+## Response
+
+The API will respond with a JSON object containing the following information:
+
+- `symbol`: The unique symbol of the token.
+- `creator`: The address of the account that originally created the token.
+- `name`: The name of the token.
+- `totalSupply`: The total number of tokens that have been minted for this token contract.
+
+### Example Response
+
+```json
+{
+   "tokenDetails": {
+        "name": "xyz",
+        "symbol": "abc",
+        "creator": "0x1f344b834E2Be81e02A97b06B31fDE5855123948",
+        "totalSupply": "0"
+    }
+}
+```
+
+### Error Responses
+In case of an error, the API will respond with a JSON object containing an error message:
+
+```json
+{
+  "error": "Error message"
+}
+
+```
+
+## Conclusion
+The `GET /tokens/:tokenAddress` endpoint allows you to retrieve information about a specific token, including its `symbol`, `creator`, `name`, and `totalSupply`.
+

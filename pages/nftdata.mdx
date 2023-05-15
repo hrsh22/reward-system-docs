@@ -1,0 +1,30 @@
+## NFT Data
+
+The NFT Data section includes APIs related to fetching information about NFTs.
+
+Fetching NFT Information
+We can fetch information of already minted NFTs using the GET method for the /nft-info API endpoint.
+
+Request
+```json
+
+fetch('https://api.perkvenue.com/v1/nft-info/:nft-id', {
+  headers: {
+    'api-key': 'your-api-key-here'
+  }
+})
+```
+
+
+Response
+```json
+
+{
+  "id": "1234",
+  "name": "My NFT",
+  "description": "This is my first NFT.",
+  "image_url": "https://example.com/nft.png",
+  "mint_date": "2022-05-01T08:00:00Z",
+  "owner_address": "0x1234567890abcdef"
+}
+```

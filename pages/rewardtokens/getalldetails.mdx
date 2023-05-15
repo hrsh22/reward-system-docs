@@ -1,0 +1,102 @@
+---
+title: Get all token details
+---
+
+# Token Details 
+
+This API endpoint allows you to get details of all the tokens.
+
+## Endpoint
+
+`POST /tokens/details`
+
+## Authentication
+All requests to our GET API require authentication. You will need to include your API key in the header of each request. You can find your API key in the "API Keys" section of your PerkVenue dashboard.
+
+## Request Headers
+
+The following request header is required to use the NFT Minting API:
+
+- `Authorization` - Your PerkVenue API key
+
+{/* ## Request Format
+
+The request format should be in JSON format and include the following parameters:
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| name | string | yes | The name of the token |
+| symbol | string | yes | The symbol of the token |
+| creatorAddress | string | yes | The Ethereum address of the token creator |
+
+#### Example Request
+
+```json copy
+{
+    "name": "Test1",
+    "symbol": "T1",
+    "creatorAddress": "0xB78721b29c028B16ab25f4a2adE1d25fbf8B2d74"
+}
+``` */}
+
+## Response
+
+The API will respond with a JSON object containing the following information:
+
+- `_id`: The unique identifier assigned to the token by the database.
+- `tokenHash`: The unique hash associated with the newly minted token.
+- `__v`: The version number of the token document in the database.
+- `symbol`: The symbol of the newly created token.
+- `creator`: The address of the creator who minted the token.
+- `name`: The name of the newly created token.
+- `tokenAddress`: The address of the contract where the token was created.
+- `tokenId`: The unique identifier of the newly created token.
+- `transactionHash`: The transaction hash associated with the minting of the token. 
+
+### Example Response
+
+```json
+{
+   "tokenDetails": [
+        {
+            "_id": "6456465e578d42c220b0d963",
+            "tokenHash": "0x0f1332497e239b3c44ec1fd9ec56dbaeb4f868e67e7ca238e95ad33067a5689b",
+            "__v": 0,
+            "creator": "0x1f344b834E2Be81e02A97b06B31fDE5855123948",
+            "name": "xyz",
+            "symbol": "abc",
+            "tokenAddress": "0xEA3eA1fc21642625f8a07f31304ED821C8C1449C",
+            "tokenId": 2,
+            "transactionHash": "0xb612a42a997756205b60dd8f800a0b4cdd324f1ff14b9e83f5b538c4f91a1908"
+        },
+        {
+            "_id": "64564771578d42c220b44fa5",
+            "tokenHash": "0x781fc4fa6bd8cf2b07e67c2304e30471612a06cc13d0c639e197a6ba0f7c535b",
+            "__v": 0,
+            "creator": "0x1f344b834E2Be81e02A97b06B31fDE5855123948",
+            "name": "pqr",
+            "symbol": "abc",
+            "tokenAddress": "0x8fCCEF7B5085bbBaF33c102ec76839c566E28e42",
+            "tokenId": 3,
+            "transactionHash": "0x1668e0cf0c6e5549f65deb9caa85fc9060c697748ea25b42ecf915f6d16eb4db"
+        }
+    ]
+}
+```
+
+### Error Responses
+In case of an error, the API will respond with a JSON object containing an error message:
+
+```json
+{
+  "error": "Error message"
+}
+
+```
+
+## Conclusion
+In conclusion, the `tokens/details` API endpoint returns a JSON object containing an array of all tokens stored in the database, each represented by an object with the fields `_id`, `tokenHash`, `__v`, `symbol`, `creator`, `name`, `tokenAddress`, `tokenId`, and `transactionHash`.
+
+
+
+  

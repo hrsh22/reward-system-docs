@@ -1,0 +1,30 @@
+# Quick Minting with URL
+
+To quickly mint a new NFT using a URL, send a POST request to the /nfts/mint endpoint.
+
+## Endpoint
+
+`POST /nfts/mint`
+
+
+## Request Format
+
+The request body should be a JSON object with the following parameters:
+
+| Parameter   | Type     | Description                                           |
+| ----------- | -------- | ----------------------------------------------------- |
+| name        | string   | The name of the NFT to be minted                      |
+| description | string   | The description of the NFT to be minted               |
+| image       | string   | The URL of the image to be associated with the NFT     |
+| addressTo   | string   | The address of the user to whom the NFT will be minted |
+
+#### Example Request
+
+```json copy
+{
+    "name": "Fourth NFT",
+    "description": "This is my fourth NFT",
+    "image": "https://user-images.githubusercontent.com/90423812/232284960-1153f1bb-d8eb-467d-9b5f-56bbc69131e1.jpg",
+    "addressTo": "0xB78721b29c028B16ab25f4a2adE1d25fbf8B2d74"
+}
+```

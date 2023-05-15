@@ -1,0 +1,60 @@
+---
+title: Selling NFTs 
+---
+
+# Selling NFTs
+
+This API allows users to sell their NFTs on the marketplace. The API supports the following functionality:
+
+- Listing NFTs for sale
+- Removing NFTs from sale
+- Updating the sale price of NFTs
+
+## Authentication
+
+All requests to the API must be authenticated. Authentication is done via an API key which can be obtained from the PerkVenue dashboard.
+
+To authenticate a request, include the API key in the `Authorization` header of the request:
+
+```json
+Authorization: Bearer YOUR_API_KEY
+```
+
+
+## Endpoints
+
+```json
+
+`POST /nfts/:nft_id/sell`
+```
+
+Lists an NFT for sale on the marketplace.
+
+#### Request Parameters
+
+| Parameter   | Type     | Description                              |
+| ----------- | -------- | ---------------------------------------- |
+| `nft_id`    | `string` | The ID of the NFT to sell                |
+| `price`     | `number` | The sale price of the NFT (in Wei units)  |
+
+#### Request Example
+
+```json
+POST /nfts/123/sell
+Authorization: Bearer YOUR_API_KEY
+Content-Type: application/json
+
+{
+  "price": "1000000000000000000"
+}
+```
+
+## Response Example
+```json
+
+{
+  "success": true,
+  "message": "NFT listed for sale"
+}
+```
+
