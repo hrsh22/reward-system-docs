@@ -1,25 +1,20 @@
 ---
-title: Minting NFTs 
+title: QuickMint NFT
 ---
 
 # NFT Minting 🛠️
 
-The NFT Minting API allows you to create and mint new non-fungible tokens (NFTs) on the PerkVenue platform using the push API method.
-
-## POST API
-Our push API is a secure and easy-to-use method for minting NFTs. You can use our API to create NFTs for your own application, or for any other use case that requires unique digital assets.
+This API allows you to quickly create and mint new non-fungible tokens (NFTs) on the PerkVenue platform using the push API method.
 
 ## Authentication
+
 All requests to our push API require authentication. You will need to include your API key in the header of each request. You can find your API key in the "API Keys" section of your PerkVenue dashboard.
 
 ## Endpoint
+
 The endpoint for the NFT Minting API is:
 
-```json
-POST https://api.perkvenue.com/nft/mint
-
-```
-
+`POST /nft/mint`
 
 ## Request Parameters
 
@@ -53,7 +48,6 @@ Authorization: YOUR_API_KEY_HERE
 
 ```
 
-
 ## Response
 
 The API will respond with a JSON object containing the following information:
@@ -69,14 +63,15 @@ The API will respond with a JSON object containing the following information:
 ```
 
 ### Error Responses
+
 In case of an error, the API will respond with a JSON object containing an error message:
 
 ```json
 {
   "error": "Error message"
 }
-
 ```
 
 ## Conclusion
+
 The PerkVenue NFT Minting API provides an easy and efficient way to mint new NFTs on the blockchain. With the API, you can create unique and valuable digital assets for your customers and users.
