@@ -1,0 +1,83 @@
+---
+title: Deploy Collection
+---
+
+# Deploy NFT Collection 
+
+The Deploy NFT Collection API allows you to deploy your own NFT (Non-Fungible Token) collection on the blockchain. This documentation provides details on how to use the API to deploy your NFT collection.
+## Authentication
+
+All requests to our GET API require authentication. You will need to include your API key in the header of each request. You can find your API key in the "API Keys" section of your PerkVenue dashboard.
+
+## Endpoint
+
+The endpoint for the NFT Minting API is:
+
+`POST /nft/deploycollection`
+
+## Request Headers
+
+The following request header is required to use the NFT Minting API:
+
+- `Authorization` - Your PerkVenue API key
+
+## Retrive all minted NFTs
+
+```json
+POST /api/nft/details HTTP/1.1
+Host: https://perkvenue.onrender.com
+Content-Type: application/json
+Authorization: YOUR_API_KEY_HERE
+```
+
+## Request Parameters
+
+The following request parameters are required to get details of a specific minted NFT:
+
+- `name` - The name of the NFT collection.
+- `symbol`- The symbol of the token collection.
+- `symbol`- Maximum number of NFTs that can be minted from this collection.
+### Example Request
+
+```json
+POST /api/nft/details HTTP/1.1
+Host: https://perkvenue.onrender.com
+Content-Type: application/json
+Authorization: YOUR_API_KEY_HERE
+
+
+{
+    "name": "Collection-1",
+    "symbol": "C4-31M",
+    "maxSupply": 3
+}
+
+```
+
+## Response
+
+The API will respond with a JSON object containing the following information:
+
+- `contractAddress`: Contract Address of the NFT collection.
+
+### Example Response
+
+```json
+{
+    "contractAddress": "0x753F05564C76dF90bB6d5C23F85e4F2041e5D846"
+}
+```
+
+### Error Responses
+
+In case of an error, the API will respond with a JSON object containing an error message:
+
+```json
+{
+  "error": "Error message"
+}
+```
+
+## Conclusion
+
+The Deploy NFT Collection API enables you to easily deploy your own NFT collection on the blockchain. By following the provided documentation, you can successfully make API requests to create your desired NFT collection.

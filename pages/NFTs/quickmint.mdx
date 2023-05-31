@@ -14,7 +14,7 @@ All requests to our push API require authentication. You will need to include yo
 
 The endpoint for the NFT Minting API is:
 
-`POST /nft/mint`
+`POST /nft/quickmint`
 
 ## Request Parameters
 
@@ -23,7 +23,7 @@ The following request parameters are required to mint a new NFT:
 - `name` - The name of the NFT
 - `description` - A description of the NFT
 - `image_url` - The URL of the image to be associated with the NFT
-- `recepient address` - Address of the recepient
+- `addressTo` - Address of the recepient
 
 ### Request Headers
 
@@ -35,7 +35,7 @@ The following request header is required to use the NFT Minting API:
 
 ```json
 POST /api/nft/mint HTTP/1.1
-Host: api.perkvenue.com
+Host: https://perkvenue.onrender.com
 Content-Type: application/json
 Authorization: YOUR_API_KEY_HERE
 
@@ -43,7 +43,7 @@ Authorization: YOUR_API_KEY_HERE
 "name": "My Awesome NFT",
 "description": "This is an awesome NFT",
 "image_url": "https://example.com/my-nft.png",
-"recepient address": "00000xx"
+"addressTo": "0x5991fd6Ecc5634C4de497b47Eb0Aa0065fffb214"
 }
 
 ```
@@ -52,13 +52,23 @@ Authorization: YOUR_API_KEY_HERE
 
 The API will respond with a JSON object containing the following information:
 
-- `id` - The unique ID of the newly minted NFT
+- `tokenId` - A unique identifier for the token.
+- `contractAddress` - Address of the NFT collection from which you want to mint the NFT.
+- `owner` - The address of the NFT owner.
+- `tokenURI` - URL of the metadata associated with the NFT.
+- `txHash` - The hash of the transaction that created the token on the blockchain.
 
 ### Example Response
 
 ```json
 {
-  "id": "21"
+    "nftDetails": {
+        "tokenId": 34,
+        "contractAddress": "0x44DE3A8078870068F01F019EFe42ba7525f64E50",
+        "owner": "0x5991fd6Ecc5634C4de497b47Eb0Aa0065fffb214",
+        "tokenURI": "https://nftstorage.link/ipfs/bafyreiaoftx4wvwqj35sfiwpjs7qlrph5gfgjjfvqfeq7rzysmkelri5rm/metadata.json",
+        "txHash": "0x1c95f42214c2597da5ffb190e67b74e6d50aed5b602470de16cbb16c6298f6fc"
+    }
 }
 ```
 

@@ -1,0 +1,99 @@
+---
+title: Mint From Collection
+---
+
+# Mint from NFT Collection 
+
+The Mint from NFT Collection API allows you to mint new NFTs from an existing NFT collection. This API provides endpoints to create new tokens and associate them with the NFT collection.
+
+## Authentication
+
+All requests to our GET API require authentication. You will need to include your API key in the header of each request. You can find your API key in the "API Keys" section of your PerkVenue dashboard.
+
+## Endpoint
+
+The endpoint for the NFT Minting API is:
+
+`POST /nft/mintFromCollection`
+
+## Request Headers
+
+The following request header is required to use the NFT Minting API:
+
+- `Authorization` - Your PerkVenue API key
+
+## Retrive all minted NFTs
+
+```json
+POST /api/nft/details HTTP/1.1
+Host: https://perkvenue.onrender.com
+Content-Type: application/json
+Authorization: YOUR_API_KEY_HERE
+```
+
+## Request Parameters
+
+The following request parameters are required to get details of a specific minted NFT:
+
+- `contractAddress` - Address of the NFT collection from which you want to mint the NFT.
+- `name` - The name of the NFT.
+- `description` - The description of the NFT.
+- `image_url` - The URL of the image to be associated with the NFT.
+- `addressTo` - Address of the recepient.
+
+### Example Request
+
+```json
+POST /api/nft/details HTTP/1.1
+Host: https://perkvenue.onrender.com
+Content-Type: application/json
+Authorization: YOUR_API_KEY_HERE
+
+
+{
+    "contractAddress": "0x49ef4E8cE813Af24fE52852b127ECA53F89E0A9F",
+    "name": "NFT5",
+    "description": "31 May 2023",
+    "image": "https://user-images.githubusercontent.com/90423812/232284960-1153f1bb-d8eb-467d-9b5f-56bbc69131e1.jpg",
+    "addressTo": "0x5991fd6Ecc5634C4de497b47Eb0Aa0065fffb214"
+}
+
+```
+
+## Response
+
+The API will respond with a JSON object containing the following information:
+
+- `tokenId` - A unique identifier for the token.
+- `contractAddress` - Address of the NFT collection from which you want to mint the NFT.
+- `owner` - The address of the NFT owner.
+- `tokenURI` - URL of the metadata associated with the NFT.
+- `txHash` - The hash of the transaction that created the token on the blockchain.
+
+### Example Response
+
+```json
+{
+    "nftDetails": {
+        "tokenId": 0,
+        "contractAddress": "0x49ef4E8cE813Af24fE52852b127ECA53F89E0A9F",
+        "owner": "0x5991fd6Ecc5634C4de497b47Eb0Aa0065fffb214",
+        "tokenURI": "https://nftstorage.link/ipfs/bafyreibrllsqvlell3omw5cxhwxnotd2f6mone6pzqjua7k72n7uore6vq/metadata.json",
+        "txHash": "0x9df6f01d60f946db73fccda180040e63b92c383214c41084f8001704dc5714b6"
+    }
+}
+```
+
+### Error Responses
+
+In case of an error, the API will respond with a JSON object containing an error message:
+
+```json
+{
+  "error": "Error message"
+}
+```
+
+## Conclusion
+
+The Mint from NFT Collection API allows you to mint new NFTs from an existing NFT collection. By following the provided documentation, you can successfully make API requests to mint new tokens and associate them with the desired NFT collection.

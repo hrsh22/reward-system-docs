@@ -26,14 +26,13 @@ The following request header is required to use the NFT Minting API:
 
 ```json
 GET /api/nft/details HTTP/1.1
-Host: api.perkvenue.com
+Host: https://perkvenue.onrender.com
 Content-Type: application/json
 Authorization: YOUR_API_KEY_HERE
 ```
 
-## Request Parameters
-
-The following request parameters are required to get details of a specific minted NFT:
+## Query Parameters
+The following query parameters can be used to filter the API results:
 
 - `id` - Unique identifier for the NFT.
 - `owner` - The address of the current owner of the NFT.
@@ -47,11 +46,14 @@ The following request parameters are required to get details of a specific minte
 - `timestampGreaterThan` - A filter parameter to retrieve NFTs created or modified after a specified timestamp.
 - `timestampLessThan` - A filter parameter to retrieve NFTs created or modified before a specified timestamp.
 
+
+ Note: Multiple query parameters can be combined to further refine the results.
+
 ### Example Request
 
 ```json
-POST /api/nft/mint HTTP/1.1
-Host: api.perkvenue.com
+GET /nft/details 
+Host: https://perkvenue.onrender.com
 Content-Type: application/json
 Authorization: YOUR_API_KEY_HERE
 

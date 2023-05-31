@@ -1,0 +1,96 @@
+---
+title: Get deployed collection details
+---
+
+# Retrive Deployed Collection Details
+
+The Retrieve Deployed Collection Details API allows you to retrieve information about a deployed NFT collection. This API provides an endpoint to fetch the details of your desired NFT collection.
+
+## Authentication
+
+All requests to our GET API require authentication. You will need to include your API key in the header of each request. You can find your API key in the "API Keys" section of your PerkVenue dashboard.
+
+## Endpoint
+
+The endpoint for the NFT Minting API is:
+
+`GET /nft/collectionDetails`
+
+## Request Headers
+
+The following request header is required to use the NFT Minting API:
+
+- `Authorization` - Your PerkVenue API key
+
+## Retrive all minted NFTs
+
+```json
+GET /nft/collectionDetails 
+Host: https://perkvenue.onrender.com
+Content-Type: application/json
+Authorization: YOUR_API_KEY_HERE
+```
+
+## Query Parameters
+The following query parameters can be used to filter the API results:
+
+- `name` - The name of the NFT collection.
+- `symbol`- The symbol of the token collection.
+- `contractAddress` - Address of the NFT collection from which you want to mint the NFT.
+
+ Note: Multiple query parameters can be combined to further refine the results.
+
+### Example Request
+
+```json
+GET /nft/collectionDetails 
+Host: https://perkvenue.onrender.com
+Content-Type: application/json
+Authorization: YOUR_API_KEY_HERE
+
+Add following Query at the end of the endpoint to get a specific minted NFT
+- `name` -"?name=collectionName"
+- `symbol` -"?symbol=collectionSymbol"
+- `contractAddress` -"?tokenAddress=0x44DE3A8078870068F01F019EFe42ba7525f64E34"
+```
+
+## Response
+
+The API will respond with a JSON object containing the following information:
+
+- `id`: Unique identifier for the NFT in the database.
+- `contractAddress`: Address of the NFT collection from which you want to mint the NFT.
+- `__v`: Address of the contract where the NFT was created.
+- `maxSupply`: Maximum number of NFTs that can be minted from this collection.
+- `name`:The name of the NFT collection.
+- `timestamp`: Timestamp indicating when the NFT was created or last updated.
+- `txHash`: Transaction hash of the transaction that created or updated the NFT.
+
+### Example Response
+
+```json
+{
+ "_id": "64778d0297b351b3738270cd",
+ "contractAddress": "0x49ef4E8cE813Af24fE52852b127ECA53F89E0A9F",
+ "__v": 0,
+ "maxSupply": 3,
+ "name": "Collection-1",
+ "symbol": "C1",
+ "timestamp": "2023-05-31T18:08:02.435Z",
+ "txHash": "0xec60bd846410679393335d6896b437fedb89c5058a1225810d4a7c9f4b98230f"
+}
+```
+
+### Error Responses
+
+In case of an error, the API will respond with a JSON object containing an error message:
+
+```json
+{
+  "error": "Error message"
+}
+```
+
+## Conclusion
+
+The Retrieve Deployed Collection Details API allows you to fetch information about a deployed NFT collection. By following the provided documentation, you can successfully make API requests to retrieve the details of your desired NFT collection.
